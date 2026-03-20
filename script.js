@@ -39,9 +39,18 @@ function dibujar() {
 
     // ecuación de la circunferencia
     //(x - h)^2 + (y - k)^2 = r^2
-    // De la ecuación se simplifica y queda y= raiz(r^2 - x^2)
+    // De la ecuación se simplifica y queda y=raiz cuadrada de (r*r - x*x))
     y = Math.round(Math.sqrt(r*r - x*x));
   }
 }
 
 dibujar();
+
+function actualizar() {
+  h = parseInt(document.getElementById("inputH").value);
+  k = parseInt(document.getElementById("inputK").value);
+  r = parseInt(document.getElementById("inputR").value);
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  dibujar();
+}
