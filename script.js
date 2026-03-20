@@ -46,11 +46,32 @@ function dibujar() {
 
 dibujar();
 
+//permite al usuario modificar x,y y r
+//limpia el canvas y vuelve a dibujar la circunferencia
 function actualizar() {
+
   h = parseInt(document.getElementById("inputH").value);
   k = parseInt(document.getElementById("inputK").value);
   r = parseInt(document.getElementById("inputR").value);
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   dibujar();
+}
+
+//Se agrega una cuadricula
+function dibujarCuadricula() {
+    dibujarCuadricula();
+  for (let i = 0; i < canvas.width; i += 20) {
+    ctx.beginPath();
+    ctx.moveTo(i, 0);
+    ctx.lineTo(i, canvas.height);
+    ctx.stroke();
+  }
+
+  for (let i = 0; i < canvas.height; i += 20) {
+    ctx.beginPath();
+    ctx.moveTo(0, i);
+    ctx.lineTo(canvas.width, i);
+    ctx.stroke();
+  }
 }
